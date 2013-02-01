@@ -1,0 +1,218 @@
+commit 4ca3cbad56923713da3f494a4c533534569ac61f
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Fri Dec 14 12:58:27 2012 +0100
+
+    bump version to 0.6
+
+commit 0869f4efb2b5579583311d20835112a4d26d8d8a
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Fri Dec 14 12:35:14 2012 +0100
+
+    fix validation of array indices
+
+commit 76500aa810b5a96b27a313720b63e338ba568cc9
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Fri Dec 14 12:34:46 2012 +0100
+
+    fix running tests during travis build
+
+commit b1d1665e21ed91a7357e8aa637863ddc3f47835c
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Mon Dec 10 15:21:01 2012 +0100
+
+    remove JsonPointer.set() to avoid duplicate code w/ python-json-patch
+    
+    json-patch (https://github.com/stefankoegl/python-json-patch/) should be used
+    for modifying JSON documents
+
+commit a990cbab99e7a63820e2668990cb40507e0ae664
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Mon Dec 10 15:16:47 2012 +0100
+
+    proper array index validation (dash, unsigned int)
+    
+    According to the spec
+    http://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-06
+    
+       o  If the currently referenced value is a JSON array, the reference
+          token MUST contain either:
+    
+          *  characters that represent an unsigned base-10 integer value
+             (possibly with leading zeros), making the new referenced value
+             the array element with the zero-based index identified by the
+             token, or
+    
+          *  exactly the single character "-", making the new referenced
+             value the (non-existant) member after the last array element.
+
+commit de634ddedd1a39710abf39d99981b0adda95a5e3
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Nov 15 11:17:14 2012 +0100
+
+    bump version to 0.5
+
+commit 4ca2dc4cd63647c222d927043e94b60a6d11b4dc
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Nov 15 11:17:02 2012 +0100
+
+    add JsonPointer.contains()
+
+commit 1e818af78ec962d6b351f3de89d771dfa86a7368
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Nov 15 11:08:01 2012 +0100
+
+    add JsonPointer.to_last() for use in jsonpatch
+
+commit 164a9151480d5e84bd1146f723ab5b8c8b5063a3
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Nov 15 11:06:55 2012 +0100
+
+    reduce verbosity of test runs
+
+commit bf24fc8c47e9974975960f1c1638250d0211cf01
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Nov 11 10:56:29 2012 +0100
+
+    Update README.md
+
+commit 454b35cfd260db347465f9c55d3b1aa4b6eae8c7
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Nov 11 10:54:52 2012 +0100
+
+    rename README => README.md
+
+commit 157e2c49bf27a582c12433e96f5a3b51ddbd3104
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Nov 11 10:50:55 2012 +0100
+
+    Update README
+
+commit 831177a224c5223bb655e8d53a7b0b40f2dab723
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Nov 11 10:47:04 2012 +0100
+
+    remove currently unsupported Python 3.3 from .travis.yml
+
+commit fb73f44be369da41c66cf8c89999fcbd229d7c7e
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Nov 11 10:44:32 2012 +0100
+
+    add .travis.yml
+
+commit 84f80db402dfb468fd8dd14119968567d46b130c
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Nov 11 10:43:58 2012 +0100
+
+    make doctests compatible with Python 3.3
+
+commit 0babb1456d9e6c9e9fb2e9e9129973ab1795b0e4
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Nov 8 15:56:20 2012 +0100
+
+    bump version to 0.4
+
+commit 16d29f8fa10664a92f27b47d617260f0e5d13b9a
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Nov 8 15:55:45 2012 +0100
+
+    update jsonpointer to current spec
+    
+    http://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-05
+
+commit 97a06ecb9dde82bd54dc269052841035ca2a1390
+Merge: 3fadd63 e82fa8a
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Wed Sep 12 06:39:40 2012 -0700
+
+    Merge pull request #2 from kxepal/master
+    
+    Compatibility fixes
+
+commit e82fa8aa37b33a1daf477224a3b85e6fda68f2b6
+Author: Alexander Shorin <kxepal@gmail.com>
+Date:   Wed Sep 12 08:50:54 2012 +0400
+
+    Fix test for Jython2.5.
+    
+    It doesn't respect this key order while others do.
+
+commit 43234d598d1d72faf0bd266cf2422f0c948e6384
+Author: Alexander Shorin <kxepal@gmail.com>
+Date:   Wed Sep 12 08:41:10 2012 +0400
+
+    Fix compatibility with Python 3.x.
+
+commit aef6313b049b08f08dd48eb6173fcb1eb63f8bcf
+Author: Alexander Shorin <kxepal@gmail.com>
+Date:   Wed Sep 12 08:34:45 2012 +0400
+
+    Fix compatibility with Python 2.5.
+    
+    Emulate next(b, None) through  for loop with single round.
+    There wasn't print_function, while it really doesn't needed.
+
+commit a2c3bc2de1a8f315f9b21e0846c17d92864c525c
+Author: Alexander Shorin <kxepal@gmail.com>
+Date:   Wed Sep 12 08:16:54 2012 +0400
+
+    Stefan, would you mind if I fix your name?(:
+    
+    $ python3.2 jsonpointer.py
+      File "jsonpointer.py", line 37
+    SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xf6 in position 0: invalid start byte
+
+commit 3fadd63a77c7074fa7a4cd6bc04b0c34891a0d64
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Fri Sep 7 11:25:32 2012 +0200
+
+    update jsonpointer to current spec
+    
+    http://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-04
+
+commit c446946cd179bc2bcfb79699e454519ade1d94c6
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Tue Aug 23 17:37:16 2011 +0200
+
+    bump version to 0.2
+
+commit 6532817abd4957ca24598e4905806517f7ec53ea
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Fri Aug 19 20:00:40 2011 +0200
+
+    add JsonPointer.set() method, fix #1
+
+commit ce24eea47dd1952ccac1a66760aea2b937314787
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Fri Aug 19 18:17:22 2011 +0200
+
+    JsonPointer.get alias for JsonPointer.resolve
+
+commit 8b58861ed5003306ea506ec837245d59e6b8fdc4
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Tue Aug 2 07:38:04 2011 +0000
+
+    wrong module name in setup.py
+
+commit fb80392c799816a0b9114a0d4acd17df7e9f227d
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Tue Aug 2 07:36:24 2011 +0000
+
+    add default parameter to resolve_pointer()
+
+commit 759aa5ea0317711e5e944a0793f783f3cc293a6a
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Mon Aug 1 14:36:20 2011 +0000
+
+    refactor into JsonPointer class
+
+commit ee717c3fee8dd11e6659a969054de6eb43f8f576
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Mon Aug 1 14:30:14 2011 +0000
+
+    make doctests less prone to errors by dict-ordering
+
+commit b243faeee8a8db1a6813765fe1113acecff0d472
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Jul 31 21:52:03 2011 +0200
+
+    initial commit
