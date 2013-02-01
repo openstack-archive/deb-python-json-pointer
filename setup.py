@@ -2,11 +2,8 @@
 
 from distutils.core import setup
 import re
-import os.path
 
-dirname = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(dirname, 'jsonpointer.py')
-src = open(filename).read()
+src = open('jsonpointer.py').read()
 metadata = dict(re.findall("__([a-z]+)__ = '([^']+)'", src))
 docstrings = re.findall('"""(.*)"""', src)
 
