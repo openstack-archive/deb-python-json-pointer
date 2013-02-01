@@ -1,5 +1,5 @@
 python-json-pointer (0.6-1) experimental; urgency=low
 
-  * Initial release (Closes: #).
+  * Initial release (Closes: #699507).
 
  -- Thomas Goirand <zigo@debian.org>  Tue, 09 Oct 2012 11:55:15 +0000
