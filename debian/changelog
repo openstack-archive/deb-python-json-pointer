@@ -1,3 +1,9 @@
+python-json-pointer (0.6-2) experimental; urgency=low
+
+  * Added patch from Ubuntu to run tests at build time (Closes: #702292).
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 05 Mar 2013 05:27:55 +0000
+
 python-json-pointer (0.6-1) experimental; urgency=low
 
   * Initial release (Closes: #699507).
