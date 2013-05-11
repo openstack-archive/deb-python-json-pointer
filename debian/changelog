@@ -1,6 +1,6 @@
 python-json-pointer (1.0-1) unstable; urgency=low
 
-  * Uploading to sid.
+  * Uploading to unstable.
   * New upstream release.
 
  -- Thomas Goirand <zigo@debian.org>  Sat, 11 May 2013 06:56:05 +0000
