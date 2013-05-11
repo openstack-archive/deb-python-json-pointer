@@ -1,3 +1,10 @@
+python-json-pointer (1.0-1) unstable; urgency=low
+
+  * Uploading to sid.
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 11 May 2013 06:56:05 +0000
+
 python-json-pointer (0.6-2) experimental; urgency=low
 
   * Added patch from Ubuntu to run tests at build time (Closes: #702292).
