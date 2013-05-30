@@ -1,3 +1,9 @@
+python-json-pointer (1.0-2) UNRELEASED; urgency=low
+
+  * Ran wrap-and-sort.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 30 May 2013 14:02:39 +0800
+
 python-json-pointer (1.0-1) unstable; urgency=low
 
   * Uploading to unstable.
