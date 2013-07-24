@@ -13,7 +13,7 @@ Build-Depends: debhelper (>= 9),
                python-setuptools,
                python3-all (>= 3.1.2-7~),
                python3-setuptools
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-json-pointer.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-json-pointer.git
 Homepage: https://github.com/stefankoegl/python-json-pointer

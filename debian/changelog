@@ -5,6 +5,7 @@ python-json-pointer (1.0-2) unstable; urgency=low
   * Adds Ubuntu patch for utf-8 in setup.py fixing FTBFS.
   * Adds README.md in the doc folders.
   * Cleans correctly (allow to build twice).
+  * Standards-Version: 3.9.4
 
  -- Thomas Goirand <zigo@debian.org>  Thu, 30 May 2013 14:02:39 +0800
 
