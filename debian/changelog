@@ -1,4 +1,4 @@
-python-json-pointer (1.0-2) UNRELEASED; urgency=low
+python-json-pointer (1.0-2) unstable; urgency=low
 
   * Ran wrap-and-sort.
   * Adds support for python3.
