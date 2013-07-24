@@ -10,7 +10,9 @@ Uploaders: Loic Dachary (OuoU) <loic@debian.org>,
 Build-Depends: debhelper (>= 9),
                openstack-pkg-tools,
                python-all (>= 2.6.6-3~),
-               python-setuptools
+               python-setuptools,
+               python3-all (>= 3.1.2-7~),
+               python3-setuptools
 Standards-Version: 3.9.3
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-json-pointer.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-json-pointer.git
@@ -20,8 +22,22 @@ Package: python-json-pointer
 Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: ${misc:Depends}, ${python:Depends}
-Description: resolve JSON pointers
+Description: resolve JSON pointers - python 2.x
  Python-json-pointer is a small library to resolve JSON pointers according to
  the IETF draft specification. JSON Pointer defines a string syntax for
  identifying a specific value within a JavaScript Object Notation (JSON)
  document.
+ .
+ This package provides the module for Python 2.x.
+
+Package: python3-json-pointer
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: resolve JSON pointers - python 3.x
+ Python-json-pointer is a small library to resolve JSON pointers according to
+ the IETF draft specification. JSON Pointer defines a string syntax for
+ identifying a specific value within a JavaScript Object Notation (JSON)
+ document.
+ .
+ This package provides the module for Python 3.x.
