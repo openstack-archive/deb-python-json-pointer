@@ -1,3 +1,9 @@
+python-json-pointer (1.7-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 30 Mar 2015 10:31:06 +0200
+
 python-json-pointer (1.0-2) unstable; urgency=low
 
   * Ran wrap-and-sort.
