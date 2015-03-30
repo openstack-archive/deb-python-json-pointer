@@ -30,11 +30,18 @@
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+from __future__ import unicode_literals
+
 """ Identify specific nodes in a JSON document (RFC 6901) """
+
+try:
+    from collections.abc import Mapping, Sequence
+except ImportError:
+    from collections import Mapping, Sequence
 
 # Will be parsed by setup.py to determine package metadata
 __author__ = 'Stefan Kögl <stefan@skoegl.net>'
-__version__ = '1.0'
+__version__ = '1.7'
 __website__ = 'https://github.com/stefankoegl/python-json-pointer'
 __license__ = 'Modified BSD License'
 
@@ -48,6 +55,7 @@ except ImportError: # Python 3
 
 from itertools import tee
 import re
+import copy
 
 
 # array indices must not contain leading zeros, signs, spaces, decimals, etc
@@ -102,6 +110,28 @@ def resolve_pointer(doc, pointer, default=_nothing):
     pointer = JsonPointer(pointer)
     return pointer.resolve(doc, default)
 
+def set_pointer(doc, pointer, value, inplace=True):
+    """
+    Resolves pointer against doc and sets the value of the target within doc.
+
+    With inplace set to true, doc is modified as long as pointer is not the
+    root.
+
+    >>> obj = {"foo": {"anArray": [ {"prop": 44}], "another prop": {"baz": "A string" }}}
+
+    >>> set_pointer(obj, '/foo/anArray/0/prop', 55) == \
+    {'foo': {'another prop': {'baz': 'A string'}, 'anArray': [{'prop': 55}]}}
+    True
+
+    >>> set_pointer(obj, '/foo/yet%20another%20prop', 'added prop') == \
+    {'foo': {'another prop': {'baz': 'A string'}, 'yet another prop': 'added prop', 'anArray': [{'prop': 55}]}}
+    True
+
+    """
+
+    pointer = JsonPointer(pointer)
+    return pointer.set(doc, value, inplace)
+
 
 class JsonPointer(object):
     """ A JSON Pointer that can reference parts of an JSON document """
@@ -117,7 +147,7 @@ class JsonPointer(object):
         self.parts = parts
 
 
-    def to_last(self, doc, default=_nothing):
+    def to_last(self, doc):
         """ Resolves ptr until the last step, returns (sub-doc, last-step) """
 
         if not self.parts:
@@ -147,14 +177,29 @@ class JsonPointer(object):
 
     get = resolve
 
+    def set(self, doc, value, inplace=True):
+        """ Resolve the pointer against the doc and replace the target with value. """
+
+        if len(self.parts) == 0:
+            if inplace:
+                raise JsonPointerException('cannot set root in place')
+            return value
+
+        if not inplace:
+            doc = copy.deepcopy(doc)
+
+        (parent, part) = self.to_last(doc)
+
+        parent[part] = value
+        return doc
 
     def get_part(self, doc, part):
         """ Returns the next step in the correct type """
 
-        if isinstance(doc, dict):
+        if isinstance(doc, Mapping):
             return part
 
-        elif isinstance(doc, list):
+        elif isinstance(doc, Sequence):
 
             if part == '-':
                 return part
@@ -164,8 +209,13 @@ class JsonPointer(object):
 
             return int(part)
 
+        elif hasattr(doc, '__getitem__'):
+            # Allow indexing via ducktyping if the target has defined __getitem__
+            return part
+
         else:
-            raise JsonPointerException("Unknown document type '%s'" % (doc.__class__,))
+            raise JsonPointerException("Document '%s' does not support indexing, "
+                                       "must be dict/list or support __getitem__" % type(doc))
 
 
     def walk(self, doc, part):
@@ -173,14 +223,16 @@ class JsonPointer(object):
 
         part = self.get_part(doc, part)
 
-        if isinstance(doc, dict):
+        assert (type(doc) in (dict, list) or hasattr(doc, '__getitem__')), "invalid document type %s" % (type(doc),)
+
+        if isinstance(doc, Mapping):
             try:
                 return doc[part]
 
             except KeyError:
                 raise JsonPointerException("member '%s' not found in %s" % (part, doc))
 
-        elif isinstance(doc, list):
+        elif isinstance(doc, Sequence):
 
             if part == '-':
                 return EndOfList(doc)
@@ -191,17 +243,27 @@ class JsonPointer(object):
             except IndexError:
                 raise JsonPointerException("index '%s' is out of bounds" % (part, ))
 
-
         else:
-            raise JsonPointerException("can not go beyond '%s' (type '%s')" % (part, doc.__class__))
-
-
+            # Object supports __getitem__, assume custom indexing
+            return doc[part]
 
     def contains(self, ptr):
-        """" Returns True if self contains the given ptr """
-        return len(self.parts) > len(ptr.parts) and \
-             self.parts[:len(ptr.parts)] == ptr.parts
+        """Returns True if self contains the given ptr"""
+        return self.parts[:len(ptr.parts)] == ptr.parts
 
+    def __contains__(self, item):
+        """Returns True if self contains the given ptr"""
+        return self.contains(item)
+
+    @property
+    def path(self):
+        """ Returns the string representation of the pointer
+
+        >>> ptr = JsonPointer('/~0/0/~1').path == '/~0/0/~1'
+        """
+        parts = [part.replace('~', '~0') for part in self.parts]
+        parts = [part.replace('/', '~1') for part in parts]
+        return ''.join('/' + part for part in parts)
 
     def __eq__(self, other):
         """ compares a pointer to another object
@@ -219,9 +281,33 @@ class JsonPointer(object):
     def __hash__(self):
         return hash(tuple(self.parts))
 
+    @classmethod
+    def from_parts(cls, parts):
+        """ Constructs a JsonPointer from a list of (unescaped) paths
+
+        >>> JsonPointer.from_parts(['a', '~', '/', 0]).path == '/a/~0/~1/0'
+        True
+        """
+        parts = [str(part) for part in parts]
+        parts = [part.replace('~', '~0') for part in parts]
+        parts = [part.replace('/', '~1') for part in parts]
+        ptr = cls(''.join('/' + part for part in parts))
+        return ptr
+
+
 
 def pairwise(iterable):
-    "s -> (s0,s1), (s1,s2), (s2, s3), ..."
+    """ s -> (s0,s1), (s1,s2), (s2, s3), ...
+
+    >>> list(pairwise([]))
+    []
+
+    >>> list(pairwise([1]))
+    []
+
+    >>> list(pairwise([1, 2, 3, 4]))
+    [(1, 2), (2, 3), (3, 4)]
+    """
     a, b = tee(iterable)
     for _ in b:
         break
