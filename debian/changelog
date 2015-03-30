@@ -1,6 +1,7 @@
 python-json-pointer (1.7-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Removed applied upstream utf8 in setup.py patch.
 
  -- Thomas Goirand <zigo@debian.org>  Mon, 30 Mar 2015 10:31:06 +0200
 
