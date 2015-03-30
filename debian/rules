@@ -24,6 +24,9 @@ override_dh_auto_install:
 		python$$pyvers setup.py install --install-layout=deb \
 			--root $(CURDIR)/debian/python3-json-pointer; \
 	done
+	mv $(CURDIR)/debian/python-json-pointer/usr/bin/jsonpointer $(CURDIR)/debian/python-json-pointer/usr/bin/python2-jsonpointer
+	mv $(CURDIR)/debian/python3-json-pointer/usr/bin/jsonpointer $(CURDIR)/debian/python3-json-pointer/usr/bin/python3-jsonpointer
+	rm -rf $(CURDIR)/debian/python*-json-pointer/usr/lib/python*/dist-packages/*.pth
 
 override_dh_auto_clean:
 	dh_auto_clean

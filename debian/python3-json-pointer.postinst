@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ] ; then
+	update-alternatives --install /usr/bin/jsonpointer jsonpointer /usr/bin/python3-jsonpointer 200
+fi
+
+#DEBHELPER#
+
+exit 0

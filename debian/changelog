@@ -2,6 +2,8 @@ python-json-pointer (1.7-1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Removed applied upstream utf8 in setup.py patch.
+  * Added management of /usr/bin/jsoinpointer using update-alternatives, so
+    that Python 2 and 3 versions don't conflict.
 
  -- Thomas Goirand <zigo@debian.org>  Mon, 30 Mar 2015 10:31:06 +0200
 
