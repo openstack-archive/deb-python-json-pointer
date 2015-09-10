@@ -1,4 +1,4 @@
-python-json-pointer (1.7-1) UNRELEASED; urgency=medium
+python-json-pointer (1.9-1) experimental; urgency=medium
 
   * New upstream release.
   * Removed applied upstream utf8 in setup.py patch.
