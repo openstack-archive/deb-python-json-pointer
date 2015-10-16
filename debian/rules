@@ -16,11 +16,11 @@ override_dh_auto_test:
 	done
 
 override_dh_auto_install:
-	set -e && for pyvers in $(PYTHONS); do \
+	set -e ; for pyvers in $(PYTHONS); do \
 		python$$pyvers setup.py install --install-layout=deb \
 			--root $(CURDIR)/debian/python-json-pointer; \
 	done
-	set -e && for pyvers in $(PYTHON3S); do \
+	set -e ; for pyvers in $(PYTHON3S); do \
 		python$$pyvers setup.py install --install-layout=deb \
 			--root $(CURDIR)/debian/python3-json-pointer; \
 	done

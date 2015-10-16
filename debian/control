@@ -19,7 +19,7 @@ Package: python-json-pointer
 Architecture: all
 Depends: ${misc:Depends},
          ${python:Depends},
-Description: resolve JSON pointers - python 2.x
+Description: resolve JSON pointers - Python 2.7
  Python-json-pointer is a small library to resolve JSON pointers according to
  the IETF draft specification. JSON Pointer defines a string syntax for
  identifying a specific value within a JavaScript Object Notation (JSON)
@@ -31,7 +31,7 @@ Package: python3-json-pointer
 Architecture: all
 Depends: ${misc:Depends},
          ${python3:Depends},
-Description: resolve JSON pointers - python 3.x
+Description: resolve JSON pointers - Python 3.x
  Python-json-pointer is a small library to resolve JSON pointers according to
  the IETF draft specification. JSON Pointer defines a string syntax for
  identifying a specific value within a JavaScript Object Notation (JSON)
