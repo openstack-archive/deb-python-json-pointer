@@ -1,6 +1,7 @@
 python-json-pointer (1.9-2) unstable; urgency=medium
 
   * Uploading to unstable.
+  * Standards-Version is now 3.9.6.
 
  -- Thomas Goirand <zigo@debian.org>  Fri, 16 Oct 2015 09:55:07 +0000
 
