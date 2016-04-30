@@ -1,8 +1,414 @@
-commit 4ca3cbad56923713da3f494a4c533534569ac61f
+commit fa17b619239afeea63ca1eb89a36ba17ce9134a9
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Wed Oct 28 20:06:37 2015 +0100
+
+    bump version to 1.10
+
+commit de059035de9c268d4d964f248d0f82ecfb4bb30b
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Wed Oct 28 20:05:54 2015 +0100
+
+    Drop support for Python 3.2
+    
+    coverage.py does not support it anymore and it is not worth to work around it.
+
+commit 309468887e2726d6ba76be04038b6996485907ed
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Wed Oct 28 20:05:40 2015 +0100
+
+    Add Python 3.5 to trove classifiers
+
+commit 9a276f9974988be0feee447aeadeb36ade7ead60
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Fri Sep 18 16:26:01 2015 +0200
+
+    Add Travis tests for Python 3.5
+
+commit cfff4f4dd456c085cd0f5edfe88f074372204ede
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu May 7 18:00:32 2015 +0200
+
+    bump version to 1.9
+    
+    Previous upload to PyPI was broken.
+
+commit be70c7bdb3329084ff244d879398e374675696de
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu May 7 17:51:53 2015 +0200
+
+    bump version to 1.8
+
+commit b5b68df09212b9c3285d464cf188b1ea486bb0a7
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu May 7 17:48:58 2015 +0200
+
+    Fix Tests for Python 3.2
+
+commit 56a06e5a9bbdc2a5ba6be2dab2e0e05767599e66
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu May 7 17:44:30 2015 +0200
+
+    Fix UnicodeEncodeError with non-ASCII paths, fixes #18
+
+commit db861fb00eed47462176280fea0525b96cce31c3
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Apr 23 22:08:43 2015 +0200
+
+    Enable container-based builds on Travis-CI
+
+commit af04ec01a9aa10a723677875ddf1fe6647d6a541
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Dec 14 19:25:10 2014 +0100
+
+    bump version to 1.7
+
+commit 55e937cca6add807ba548343a297733f64ea5c55
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Dec 14 19:21:22 2014 +0100
+
+    Fix ``jsonpointer`` commandline utility (#14)
+
+commit 69226a7ac7e72a535d564ceaeb2ae90bed17d409
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Fri Nov 14 21:03:11 2014 +0100
+
+    bump version to 1.6
+
+commit d3966dd34c681a5e1c790ca212a020d83bca26ac
+Author: kafkaf- <thekafkaf@gmail.com>
+Date:   Mon Nov 10 22:15:26 2014 +0200
+
+    Fix contains unexpected false return
+
+commit 490c7a25147b0674fc0234d0462726595bd4fd87
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Mon Nov 3 18:48:50 2014 +0100
+
+    bump version to 1.5
+
+commit ff0fadf67bc1b05967633434c534c872c12e0267
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Mon Nov 3 18:42:01 2014 +0100
+
+    Use ABCs instead of list/dict
+    
+    see https://github.com/stefankoegl/python-json-patch/issues/33
+
+commit 7c4a5fcf15a4e577067a67364fa379ddb3acb555
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Oct 25 15:24:44 2014 +0200
+
+    Convert readme from markdown to rst for PyPI
+
+commit 88a966bb22e1d5f9156662e21f8f67f8f6a50ba7
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Oct 5 11:04:48 2014 +0200
+
+    Add support for Python 3.4, pypy3, use travis_retry
+    
+    http://blog.travis-ci.com/2013-05-20-network-timeouts-build-retries/
+
+commit 593feda08bbb9671664e9bc8273f294333a63a0d
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Jul 3 22:12:38 2014 +0200
+
+    Add dependencies for creating wheels
+
+commit 34073e561261cb413b9bdff5beac31b070d98ea2
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Jul 3 21:58:15 2014 +0200
+
+    bump version to 1.4
+
+commit ffcafea3a18b34d203f3262150fb0fd48ae67c0c
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Mon Jun 30 22:37:26 2014 +0200
+
+    [Setup] use utf-8 explicitly in setup.py, fixes #8
+
+commit b94324408a73a2cdedefcb324a87a45f2e9baebf
+Merge: ac7c86e 85620b0
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Mar 30 10:49:03 2014 +0200
+
+    Merge pull request #7 from alexsdutton/patch-1
+    
+    JsonPointer.from_parts should handle the empty path
+
+commit 85620b0255b0680ce35c6a1b37385d054cfc99d4
+Author: Alexander Dutton <alexander.dutton@it.ox.ac.uk>
+Date:   Wed Mar 26 14:48:56 2014 +0000
+
+    Calculate path properly when self.parts == [].
+
+commit 1ed957b1e4ea6206f94830b30882de83b34ee935
+Author: Alexander Dutton <alexander.dutton@it.ox.ac.uk>
+Date:   Wed Mar 26 14:48:32 2014 +0000
+
+    Added tests for round-tripping pointers from paths to parts
+
+commit 95a5b4672a60ecf298ea86ef501550fb0c032d52
+Author: Alexander Dutton <dev@alexdutton.co.uk>
+Date:   Wed Mar 26 14:30:17 2014 +0000
+
+    JsonPointer.from_parts should handle the empty path
+    
+    [The RFC says](http://tools.ietf.org/html/rfc6901#page-5) that the path `""` points at the original document. However, passing `[]` to `from_parts()` results in a path of `"/"` (the same as when one passes `[""]`. This makes the empty list produce a pointer for the empty path.
+
+commit ac7c86e1bc35ba3e22bf5e68945d2c9316b754f9
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Mar 22 18:55:43 2014 +0100
+
+    fix doctest for Python 3
+
+commit 856c7a6dd796ac01385034fd4ee538b362ec44e1
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Mar 22 18:52:22 2014 +0100
+
+    bump version to 1.3
+
+commit dba7c666e8828bab08d1687e9264bcc9e803ee25
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Mar 22 18:48:30 2014 +0100
+
+    add JsonPointer.path and JsonPointer.from_parts
+
+commit 28ee1bb93c8ec323a061a34e74d1882def3bea80
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Feb 20 20:10:37 2014 +0100
+
+    bump version to 1.2
+
+commit 32f6363108903e6dbc480d424b148cd256782911
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Mar 9 14:44:49 2014 +0100
+
+    add trove classifiers (fixes #6)
+
+commit 6e2016548fbcdaf898ff117a10f014a721c4a305
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Fri Nov 22 16:22:10 2013 +0100
+
+    fix string formatting in assert statement
+
+commit 7ae781bcc7bafe90c1b1e1a36538b17c3ef5fff5
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Mon Oct 28 18:05:36 2013 +0100
+
+    fix typo in setup.py
+    
+    Thanks to Kieran Spear <kispear@gmail.com> for reporting this in
+    https://github.com/stefankoegl/python-json-patch/pull/17
+
+commit af636e7036c1213f38078414312795c938574175
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Oct 13 15:30:34 2013 +0200
+
+    add links to README.md
+
+commit 979531d2e8f7411beb7a3dff13a46ad425660742
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Oct 13 15:09:10 2013 +0200
+
+    add MANIFEST.in
+
+commit 35bf7b70619288cff7d67e279fa952c72345cc63
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Oct 12 12:19:41 2013 +0200
+
+    add comments to commandline doc
+
+commit b607526f60b5b3bc35309058c6df5ecfc710f413
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Oct 12 10:24:37 2013 +0200
+
+    add "jsonpointer" commandline utility
+
+commit 07812c7363de12736e76ba9f376e9eea72b99248
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Sep 22 15:52:58 2013 +0200
+
+    add missing AUTHORS
+
+commit 19f9f2152480c72e0f83f48930088bd22f1eded5
+Author: Christopher J. White <chris@grierwhite.com>
+Date:   Sat Sep 21 13:19:50 2013 -0400
+
+    Support for set_pointer and indexing arbitrary objects via __getitem__/__setitem__
+
+commit 48dce313141ba5bf0d2f3dd2e590042c05755e53
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Jul 11 21:50:31 2013 +0200
+
+    refactor type check
+
+commit ef7a41cdceca4e3f05e56468214a048500ab6973
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Jul 11 21:46:18 2013 +0200
+
+    add tests for JsonPointer.to_last()
+
+commit 03abbd77f9bebb7aa8dfcd205314bd516511c591
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Jul 11 21:10:11 2013 +0200
+
+    remove unused param of to_last()
+
+commit 5bf2ef97f7c599b54c9632c1e9c544f71153d9e3
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Jul 11 21:05:56 2013 +0200
+
+    add test for out-of-bounds error
+
+commit 51cb6b6acadbbfc45aa281f84400ff982677c8a3
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Jul 11 20:22:38 2013 +0200
+
+    add test for JsonPointer.contains(other)
+
+commit 8b2c8fe52803be008fc5f16ef5a4ebbebbc6482b
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Jul 11 18:37:53 2013 +0200
+
+    add test for invalid list index
+
+commit b531ce1db69df4e290fda445edc85b8f135526fa
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Thu Jul 11 18:25:37 2013 +0200
+
+    add test for pointer string not starting with /
+
+commit 078ed6f153e1189ac051ee3820c6381fee41d12a
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Jul 7 19:25:19 2013 +0200
+
+    add test for comparing a pointer to another object
+
+commit 9a0c272c76ac29f2c20a5a9c52f489084428c314
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Jul 7 19:09:54 2013 +0200
+
+    show pypi information in README
+
+commit 24fdb888cded3702795f3e4bd57fa3d5596084a4
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Jul 7 19:04:27 2013 +0200
+
+    show coverage status in README
+
+commit 1b56912e681683acbaad11bac426a2d553c981b5
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Jul 7 19:01:59 2013 +0200
+
+    remove some code from coverage calculation
+
+commit faa346f16ba586e1c5e1030437cdae9061b79b46
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Jul 7 18:48:32 2013 +0200
+
+    move coverage code from tests.py to makefile
+
+commit 8584ae93582437f6c15ab69c2ddbb31c12da26ca
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Jul 7 18:36:16 2013 +0200
+
+    add coveralls support to .travis.yml
+
+commit 5b7009085ab211840ca5215833b7a1456744dce2
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Jul 6 11:17:30 2013 +0200
+
+    add doctests for pairwise(iter)
+
+commit a3982e34ca8849796ab09d9ce49b86eb208da4cc
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Apr 13 18:45:53 2013 +0200
+
+    mention supported Python versions in docs
+
+commit a7c38389834ec87cc8111b798f6835a1a2704aea
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Apr 13 18:42:07 2013 +0200
+
+    Drop support for Python 2.5
+
+commit b6a86af812268782c201c037b90c378aeea6ccf4
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Apr 13 18:40:01 2013 +0200
+
+    also target Python 3.3 and PyPy
+
+commit ce5c9fd499886e293050a5de8901558073a325ab
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Apr 13 18:39:45 2013 +0200
+
+    fix unicode literal quirks in Python 3.2
+
+commit 18ca2528423708103860a0dfd480d3426dc52a06
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Apr 13 18:19:59 2013 +0200
+
+    let sphinx extract version, author from source
+
+commit cb1e33e5cda282d423cc850b6e46774560e5a607
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Apr 13 19:02:53 2013 +0300
+
+    README: add link to docs
+
+commit 159fd825949fa63286208a773ca733f2bf3d4c69
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Apr 13 17:58:44 2013 +0200
+
+    add some documentation
+
+commit 525b5be0ca45e47edc9756c07dadde4a94e940c1
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sat Apr 13 17:58:13 2013 +0200
+
+    ignore *.swp and files generated during packaging
+
+commit c1ec3dfd171b242e23b3fe078a99f0e23fb0c6ea
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Wed Apr 3 15:42:02 2013 +0200
+
+    bump version to 1.0
+
+commit 42827945260ee93137ea0b2e486ab11ddb1ba63f
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Wed Apr 3 15:41:46 2013 +0200
+
+    mention RFC 6901
+
+commit e7cd915cf8ee787852413375568cb0aedff19d7d
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Jan 6 10:58:12 2013 +0100
+
+    bump version to 0.7
+
+commit 55198aa4cb5c7d3d503e8cb9e717433688af8d8f
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Jan 6 10:57:13 2013 +0100
+
+    unambiguous array indices make pointers comparable
+
+commit 2537956503ea982f0fa29f54399677605a60218d
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Jan 6 10:55:43 2013 +0100
+
+    no leading zeros for array indices, as of draft 08
+
+commit 24629142104ec7c624fc5aaa975adc6fe9f89483
 Author: Stefan Kögl <stefan@skoegl.net>
 Date:   Fri Dec 14 12:58:27 2012 +0100
 
     bump version to 0.6
+
+commit 1529f7dd0280c0480105f2169543a57873c2fe81
+Author: Stefan Kögl <stefan@skoegl.net>
+Date:   Sun Dec 16 16:44:27 2012 +0100
+
+    fix installing when not in source directory, fixes #3
 
 commit 0869f4efb2b5579583311d20835112a4d26d8d8a
 Author: Stefan Kögl <stefan@skoegl.net>
