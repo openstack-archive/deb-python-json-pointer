@@ -1,5 +1,6 @@
-python-json-pointer (1.10-1) UNRELEASED; urgency=medium
+python-json-pointer (1.10-1) unstable; urgency=medium
 
+  * Team upload.
   * New upstream release.
   * Fixed VCS URLs (https).
   * Added simple Debian tests.
@@ -10,7 +11,7 @@ python-json-pointer (1.10-1) UNRELEASED; urgency=medium
   * Added -doc package with sphinx documentation
   * Removed redundant d/docs
 
- -- Ondřej Nový <novy@ondrej.org>  Sun, 28 Feb 2016 15:40:14 +0100
+ -- Ondřej Nový <novy@ondrej.org>  Sat, 30 Apr 2016 23:41:24 +0200
 
 python-json-pointer (1.9-3) unstable; urgency=medium
 
