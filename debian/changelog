@@ -10,6 +10,7 @@ python-json-pointer (1.10-1) unstable; urgency=medium
     - Added myself to Debian part
   * Added -doc package with sphinx documentation
   * Removed redundant d/docs
+  * Don't run autotests with nocheck option enabled
 
  -- Ondřej Nový <novy@ondrej.org>  Sat, 30 Apr 2016 23:41:24 +0200
 

@@ -10,10 +10,12 @@ include /usr/share/openstack-pkg-tools/pkgos.make
 %:
 	dh $@ --buildsystem=python_distutils --with python2,python3,sphinxdoc
 
+ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 override_dh_auto_test:
 	set -e ; for pyvers in $(PYTHONS) $(PYTHON3S); do \
 		python$$pyvers ./tests.py ; \
 	done
+endif
 
 override_dh_auto_install:
 	set -e ; for pyvers in $(PYTHONS); do \
