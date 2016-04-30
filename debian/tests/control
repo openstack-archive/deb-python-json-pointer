@@ -1,3 +1,6 @@
+Tests: cli
+Depends: python-json-pointer, python3-json-pointer
+
 Test-Command: cd "$ADTTMP" ; python -c "import jsonpointer; print jsonpointer.__version__"
 Depends: python-json-pointer
 

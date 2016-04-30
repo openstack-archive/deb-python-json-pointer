@@ -1,0 +1,18 @@
+#!/bin/bash
+#----------------------
+# Testing cli utilities
+#----------------------
+set -e
+
+cd "$ADTTMP"
+
+HELP_CLIS=('jsonpointer' 'python2-jsonpointer' 'python3-jsonpointer')
+for cli in "${HELP_CLIS[@]}"; do
+    if ! $cli -h 2>&1 > /dev/null; then
+        echo "ERROR, ${cli} is not running"
+        exit 1
+    else
+        echo "OK: ${cli} is running"
+    fi
+done
+exit 0
