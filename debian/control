@@ -8,9 +8,9 @@ Build-Depends: debhelper (>= 9),
                openstack-pkg-tools,
                python-all,
                python-setuptools,
+               python-sphinx,
                python3-all,
                python3-setuptools,
-               python-sphinx,
 Standards-Version: 3.9.8
 Vcs-Browser: https://anonscm.debian.org/cgit/openstack/python-json-pointer.git/
 Vcs-Git: https://anonscm.debian.org/git/openstack/python-json-pointer.git
