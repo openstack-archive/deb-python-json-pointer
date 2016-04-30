@@ -10,6 +10,7 @@ Build-Depends: debhelper (>= 9),
                python-setuptools,
                python3-all,
                python3-setuptools,
+               python-sphinx,
 Standards-Version: 3.9.8
 Vcs-Browser: https://anonscm.debian.org/cgit/openstack/python-json-pointer.git/
 Vcs-Git: https://anonscm.debian.org/git/openstack/python-json-pointer.git
@@ -38,3 +39,16 @@ Description: resolve JSON pointers - Python 3.x
  document.
  .
  This package provides the module for Python 3.x.
+
+Package: python-json-pointer-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends},
+         ${sphinxdoc:Depends},
+Description: resolve JSON pointers - doc
+ Python-json-pointer is a small library to resolve JSON pointers according to
+ the IETF draft specification. JSON Pointer defines a string syntax for
+ identifying a specific value within a JavaScript Object Notation (JSON)
+ document.
+ .
+ This package contains the documentation.

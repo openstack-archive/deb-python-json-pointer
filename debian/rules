@@ -8,7 +8,7 @@ UPSTREAM_GIT = git://github.com/stefankoegl/python-json-pointer.git
 include /usr/share/openstack-pkg-tools/pkgos.make
 
 %:
-	dh $@ --buildsystem=python_distutils --with python2,python3
+	dh $@ --buildsystem=python_distutils --with python2,python3,sphinxdoc
 
 override_dh_auto_test:
 	set -e ; for pyvers in $(PYTHONS) $(PYTHON3S); do \
@@ -34,3 +34,9 @@ override_dh_python3:
 override_dh_auto_clean:
 	dh_auto_clean
 	rm -rf build .egg-info
+
+ifeq (,$(findstring nodocs, $(DEB_BUILD_OPTIONS)))
+override_dh_sphinxdoc:
+	sphinx-build -b html doc $(CURDIR)/debian/python-json-pointer-doc/usr/share/doc/python-json-pointer-doc/html
+	dh_sphinxdoc -O--buildsystem=python_distutils
+endif

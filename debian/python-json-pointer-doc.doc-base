@@ -1,0 +1,9 @@
+Document: python-json-pointer-doc
+Title: Python JSON pointer Documentation
+Author: Stefan Kögl <stefan@skoegl.net>
+Abstract: Sphinx documentation for Python JSON pointer
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-json-pointer-doc/html/index.html
+Files: /usr/share/doc/python-json-pointer-doc/html/*
