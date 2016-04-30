@@ -8,6 +8,7 @@ License: BSD-3-clauses
 
 Files: debian/*
 Copyright: (c) 2012, Thomas Goirand <zigo@debian.org>
+           (c) 2016, Ondřej Nový <novy@ondrej.org>
 License: BSD-3-clauses
 
 License: BSD-3-clauses
