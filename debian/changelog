@@ -8,6 +8,7 @@ python-json-pointer (1.10-1) UNRELEASED; urgency=medium
     - Fixed order
     - Added myself to Debian part
   * Added -doc package with sphinx documentation
+  * Removed redundant d/docs
 
  -- Ondřej Nový <novy@ondrej.org>  Sun, 28 Feb 2016 15:40:14 +0100
 
