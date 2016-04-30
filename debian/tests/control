@@ -1,0 +1,6 @@
+Test-Command: cd "$ADTTMP" ; python -c "import jsonpointer; print jsonpointer.__version__"
+Depends: python-json-pointer
+
+Test-Command: cd "$ADTTMP" ; python3 -c "import jsonpointer; print(jsonpointer.__version__)"
+Depends: python3-json-pointer
+
