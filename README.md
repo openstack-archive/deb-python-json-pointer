@@ -1,3 +1,10 @@
+Team and repository tags
+========================
+
+[![Team and repository tags](http://governance.openstack.org/badges/deb-python-json-pointer.svg)](http://governance.openstack.org/reference/tags/index.html)
+
+<!-- Change things from this point on -->
+
 python-json-pointer [![Build Status](https://secure.travis-ci.org/stefankoegl/python-json-pointer.png?branch=master)](https://travis-ci.org/stefankoegl/python-json-pointer) [![Coverage Status](https://coveralls.io/repos/stefankoegl/python-json-pointer/badge.png?branch=master)](https://coveralls.io/r/stefankoegl/python-json-pointer?branch=master) ![Downloads](https://pypip.in/d/jsonpointer/badge.png) ![Version](https://pypip.in/v/jsonpointer/badge.png)
 ===================
 
